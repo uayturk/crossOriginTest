@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("button").click(function(){
+        $.ajax({
+          url: 'http://localhost:8080/flightAirService/getActiveOrInactiveAirports?active=true',
+          success: function(result){
+            $("#div1").html(result);
+            console.log("Successfuly sent request to the FlightAirServiceApi's Spring Controller Method.");
+          }});
+      });
+    });
+  </script>
+</head>
+<body>
+
+<div id="div1"><h2>Send Request to the FlightAirServiceApi's Method</h2></div>
+
+<button>Send Request</button>
+
+</body>
+</html>
+
